@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div>
+    <h1>Bienvenido a la agencia de viaje HALAC</h1>
+   
+    <a href='@Url.Action("SelectPaquete","Home")'>Crear paquete de viaje</a>
+    @{
+        foreach(string paquete in ViewBag.Diccionario.Keys)
+        {
+            <h2>@paquete</h2>
+            <img src="/images/Excursiones/@ViewBag.Diccionario[paquete].Excursion">
+            <img src="/images/Aereos/@ViewBag.Diccionario[paquete].Aereo">
+            <img src="/images/Hoteles/@ViewBag.Diccionario[paquete].Hotel">
+        } 
+    }
+</div>

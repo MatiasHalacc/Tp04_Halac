@@ -1,0 +1,70 @@
+@{
+    ViewData["Title"] = "Index";
+}
+
+  
+    <form action ='@Url.Action("GuardarPaquete","Home")'>
+        
+        <h2>Destino</h2>
+        <div class="box">
+            @{
+                foreach(string Destino in ViewBag.ListaDestinos)
+                {
+                    <h3>@Destino</h3>
+                }   
+            }
+        </div>
+          <p>
+         Elige el destino:
+                <input required type="Number" name="Destino">
+                </p>
+     
+            
+        <h2>Hotel</h2>
+        <div class="box">
+            @{
+                foreach(string Hotel in ViewBag.ListaHoteles)
+                {
+                    <div class="img"><img src="/Images/Hoteles/@Hotel" ></div>
+                }
+                
+            }
+        </div>
+        <p>
+                Elige el Hotel:
+                <input required type="Number" name="Hotel">
+                </p>
+     
+            
+      <h2>Aerolinea</h2>
+        <div  class="box">
+            @{
+                foreach(string Aereo in ViewBag.ListaAereos)
+                {
+                    <div class="img"><img src="/Images/Aereos/@Aereo" ></div>
+                }
+                
+            }
+        </div>
+        <p>
+                Elige la Aerolinea:
+                <input required type="Number" name="Aereo">
+                </p>
+      
+        <h2>Excursión</h2>
+        <div class="box">
+        @{
+            foreach(string Excursion in ViewBag.ListaExcursiones)
+            {
+                <div class="img"><img src="/Images/Excursiones/@Excursion" ></div>
+            }
+        }
+        </div>
+       <p>
+            Elige la Excursion:
+            <input required type="Number" name="Excursion">
+        </p>
+        
+        
+        <input type="Submit" value="Enviar Formulario">
+    </form>
